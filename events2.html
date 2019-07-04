@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Events part 2</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            border: 1px solid rgb(139, 81, 81);
+            text-align: center;
+            line-height: 300px;
+            font-size: 40px
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">THE CLICKER</button>
+    <div id="container" class="container">container</div>
+
+
+    <script>
+        const btn = document.getElementById('btn');
+        const container = document.querySelector('.container');
+
+        container.addEventListener('mousemove', changeBack);
+
+        function changeBack() {
+            let x = event.offsetX;
+            let y = event.offsetY;
+            let z = event.clientY;
+            console.log(x, y, z);
+            container.style.backgroundColor = `rgb(${x},${y},${z})`;
+        }
+
+
+        //setTimeout(function(), 2000(which stands for interval));
+    </script>
+</body>
+
+</html>
